@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
@@ -6,6 +7,18 @@ import "./globals.css";
 
 export default function Home() {
    const algorithm = [
+      {
+         name: "ARRAY",
+         url: "/array",
+         img: "/array.png",
+         gif: "/array-animate.gif",
+      },
+      {
+         name: "Linked List",
+         url: "/list",
+         img: "/linkedlist.jpg",
+         gif: "/linkedlis-animate.gif",
+      },
       {
          name: "STACK",
          url: "/stack",
@@ -24,20 +37,25 @@ export default function Home() {
          img: "/bst.png",
          gif: "/bst-animate.gif",
       },
+      {
+         name: "Graph (Djikstra)",
+         url: "/graph",
+         img: "/graph.webp",
+         gif: "/graph-animate.gif",
+      },
    ];
    const [hoverStates, setHoverStates] = useState(algorithm.map(() => false));
 
    return (
-      <div className="flex flex-col items-center justify-center gap-8 m-10 align-middle md:flex-row ">
+      <div className="flex flex-col items-center justify-center gap-8 flex-wrap my-10 mx-48  align-middle md:flex-row ">
          {algorithm.map((v, i) => {
             return (
-               <Link key={i} href={v.url} className="">
+               <Link key={i} href={v.url} className="link-menu">
                   <div className="text-center ">
                      <motion.div
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="overflow-hidden bg-white rounded-md shadow-lg h-60 w-72 hover:shadow-md"
-                        whileHover={{ scale: 1.1 }}>
+                        // initial={{ opacity: 0, y: -100 }}
+                        // animate={{ opacity: 1, y: 0 }}
+                        className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
                         <motion.img
                            onMouseOver={() => {
                               const newHoverStates = [...hoverStates];

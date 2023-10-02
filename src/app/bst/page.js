@@ -49,19 +49,13 @@ function Tree(props) {
 }
 
 function App() {
+   const [isClient, setIsClient] = React.useState(false);
    const [number, setNumber] = React.useState(50);
    const [root, setRoot] = React.useState(null);
 
    React.useEffect(() => {
-      bst.add(7);
-      bst.add(4);
-      bst.add(9);
-      bst.add(3);
-      bst.add(5);
-      bst.add(8);
-      bst.add(10);
-
       setRoot((prev) => ({ ...prev, ...bst.root }));
+      setIsClient(true);
    }, []);
 
    function changeNumber(e) {
@@ -93,16 +87,8 @@ function App() {
    const treeJson = bst.toJson();
    return (
       <div className="m-10">
-         <h1>Binary Search Tree Visualization</h1>
-         <form onSubmit={addNumber} className="form-control">
-            <input
-               type="number"
-               min="1"
-               name="add"
-               onChange={changeNumber}
-               required
-               className="h-10 pl-2 text-black rounded-md text-md"
-            />
+         <form onSubmit={addNumber}>
+            <input type="number" min="1" name="add" onChange={changeNumber} required />
             <button type="submit" className="btn bg-slate-500">
                Add
             </button>
@@ -126,29 +112,35 @@ function App() {
                Find Min
             </button>
          </form>
-         <pre className="to-json">{treeJson}</pre>
-         <div className="canvas mt-8">
-            <table className="text-slate-800">
-               <tr>
-                  <td>InOrder </td>
-                  <td>: {inorder}</td>
-               </tr>
-               <tr>
-                  <td>PreOrder </td>
-                  <td>: {preorder}</td>
-               </tr>
-               <tr>
-                  <td>PostOrder </td>
-                  <td>: {postorder}</td>
-               </tr>
-            </table>
-            <div className="tf-tree tf-custom">
-               <ul>
-                  <li>
-                     <Tree data={root} parent={bst.root} />
-                  </li>
-               </ul>
-            </div>
+         <pre className="to-json">{isClient && treeJson}</pre>
+         <div className="mt-8 canvas">
+            {isClient && (
+               <>
+                  <table className="text-slate-800">
+                     <tbody>
+                        <tr>
+                           <td>InOrder </td>
+                           <td>: {inorder}</td>
+                        </tr>
+                        <tr>
+                           <td>PreOrder </td>
+                           <td>: {preorder}</td>
+                        </tr>
+                        <tr>
+                           <td>PostOrder </td>
+                           <td>: {postorder}</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div className="tf-tree tf-custom">
+                     <ul>
+                        <li>
+                           <Tree data={root} parent={bst.root} />
+                        </li>
+                     </ul>
+                  </div>
+               </>
+            )}
          </div>
       </div>
    );

@@ -1,4 +1,5 @@
 "use client";
+import "../globals.css";
 import "./styles.css";
 import { motion } from "framer-motion";
 // @ts-ignore
@@ -82,10 +83,8 @@ export default function Dsqueue() {
                </li>
             </h1>
 
-            <pre className="absolute z-10 hidden h-40 overflow-scroll text-xs text-black rounded-sm md:block top-5 right-10 w-60 bg-slate-100">
-               {JSON.stringify(data, 0, 2)}
-            </pre>
-            <div className="flex flex-wrap overflow-scroll md:justify-start justify-center gap-4 p-5 border rounded-md shadow-md h-[24rem] bg-slate-100 ">
+            <pre className="to-json">{JSON.stringify(data, 0, 2)}</pre>
+            <div className="canvas">
                {data.elements.map((v, i) => {
                   return (
                      <div key={i} className="wrap-node">

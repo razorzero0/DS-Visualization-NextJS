@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 li {
-   @apply items-center w-20 h-12 pt-2 text-center align-middle list-none duration-200 border rounded-md cursor-pointer bg-Cyellow border-Cblack md:w-28 hover:scale-110;
+   @apply items-center w-20 h-12 pt-2 text-center align-middle list-none duration-200 border  cursor-pointer bg-Cyellow border-Cblack md:w-28;
 }
 
 .blink {

@@ -1,4 +1,5 @@
 "use client";
+import "../globals.css";
 import "./styles.css";
 import { motion } from "framer-motion";
 // @ts-ignore
@@ -56,7 +57,7 @@ export default function DsStack() {
    return (
       <div className="m-10">
          <form onSubmit={handler}>
-            <input className="h-10 pl-2 text-black rounded-md text-md" type="text" name="name" />
+            <input className="h-10 pl-2 rounded-md text-md" type="text" name="name" />
             <button className="btn" type="submit">
                PUSH
             </button>

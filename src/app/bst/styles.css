@@ -8,6 +8,29 @@ input[type="number"]::-webkit-outer-spin-button {
    margin: 0;
 }
 
+input {
+   @apply h-10 pl-2 border border-black rounded-md bg-Cwhite;
+}
+.to-json {
+   box-shadow: -0.25rem -0.25rem #222222;
+   @apply absolute z-10 hidden h-40 overflow-scroll text-xs text-black border-[2px] rounded-md md:block top-[22rem] right-16 w-60 bg-Cgrey border-Cblack;
+}
+.canvas {
+   @apply flex flex-wrap overflow-scroll md:justify-start justify-center gap-4 p-5 border-[2px] rounded-md shadow-md  h-[24rem]  bg-Cwhite border-Cblack;
+   box-shadow: 0.5rem 0.5rem 0 0.2rem #222222;
+}
+
+.btn,
+.btn[type="submit"] {
+   box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
+   @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-lightBlue text-Cblack;
+}
+
+.btn:hover {
+   transform: translate(0.25rem, 0.25rem);
+   @apply shadow-none;
+}
+
 .tree {
    width: 100%;
    margin-top: 1rem;

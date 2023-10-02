@@ -1,31 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap"); */
 
+body {
+   @apply bg-Cgrey;
+}
 :root {
-   color: white;
+   /* font-family: "Fascinate Inline", cursive; */
+   @apply text-Cblack;
+}
+input {
+   @apply h-10 pl-2 border border-black rounded-md bg-Cwhite;
 }
 .to-json {
-   @apply absolute z-10 hidden h-40 overflow-scroll text-xs text-black rounded-sm md:block top-5 right-10 w-60 bg-slate-100;
+   box-shadow: -0.25rem -0.25rem #222222;
+   @apply absolute z-10 hidden h-40 overflow-scroll text-xs text-black border-[2px] rounded-md md:block top-5 right-10 w-60 bg-Cwhite border-Cblack;
 }
 .canvas {
-   @apply flex flex-wrap overflow-scroll md:justify-start justify-center gap-4 p-5 border rounded-md shadow-md h-[24rem] bg-slate-100;
+   @apply flex flex-wrap overflow-scroll md:justify-start justify-center gap-4 p-5 border-[2px] rounded-md shadow-md  h-[24rem]  bg-Cwhite border-Cblack;
+   box-shadow: 0.5rem 0.5rem 0 0.2rem #222222;
 }
 
-.btn {
-   @apply w-16 h-8 ml-2 text-xs duration-200 border border-black rounded-md md:w-28 md:text-lg md:h-10 bg-slate-500 hover:bg-slate-600 hover:scale-105;
+.btn-blue,
+.btn-blue[type="submit"] {
+   box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
+   @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-lightBlue text-Cblack;
+}
+.btn-red {
+   box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
+   @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-Cpink text-Cblack;
+}
+.btn-blue:hover,
+.btn-red:hover {
+   transform: translate(0.25rem, 0.25rem);
+   @apply shadow-none;
 }
 .wrap-node {
    @apply flex flex-col gap-2 m-2 text-center;
 }
-/* li {
-   @apply items-center  border-[3px]  w-20 h-12 pt-2 text-center align-middle list-none duration-200 bg-green-500 border-green-700 rounded-md shadow-md cursor-pointer md:w-28 hover:scale-110;
-} */
 
+.menu {
+   @apply duration-200 border-[2px] rounded-lg border-Cblack;
+   box-shadow: 0 0.5rem 0 0.01rem #183153;
+}
+
+.link-menu:hover > div > h1 {
+   text-shadow: 0 0.5rem 1rem #183153;
+}
 .blink {
    animation-duration: 2s;
    animation-name: bounce;
    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+line[stroke="red"] polygon {
+   fill: red;
+   stroke-width: 100px;
 }
 @keyframes bounce {
    0% {
