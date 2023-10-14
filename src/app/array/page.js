@@ -2,7 +2,7 @@
 import "../globals.css";
 import "./style.css";
 import { motion } from "framer-motion";
-import { List } from "js_dsal";
+import { List } from "../js";
 import { useState, useRef } from "react";
 
 export default function DsList() {
@@ -116,35 +116,29 @@ export default function DsList() {
       <div className="m-10">
          <form onSubmit={handler} className="">
             <input
-               className="h-10 pl-2 rounded-md text-md float-left"
+               className="float-left h-10 pl-2 rounded-md text-md"
                type="text"
                name="data"
                ref={inputRef}
             />
-            <button className="btn ml-5" onClick={() => pushBack(inputRef.current.value)}>
+            <button className="ml-5 btn-blue" onClick={() => pushBack(inputRef.current.value)}>
                Insert
             </button>
             <div className="mt-2 ">
-               {/* <button className="btn ml-0 bg-Cgrape" onClick={popFront}>
-                  Prepend
-               </button> */}
-               <button className="btn ml-0" onClick={() => pushFront(inputRef.current.value)}>
-                  UnShift
-               </button>
-               <button className="btn bg-Cgrape" onClick={popBack}>
+               <button className="btn-grape" onClick={popBack}>
                   Pop
                </button>
 
-               <button className="btn bg-Cpink" onClick={erase}>
+               <button className="btn-red" onClick={erase}>
                   Erase
                </button>
             </div>
          </form>
 
          <div>
-            <h1 className={"font-serif text-sm mt-4 "}>
+            {/* <h1 className={"font-serif text-sm mt-4 "}>
                action ={">"} {action && action}
-            </h1>
+            </h1> */}
             <h1 className="flex items-center justify-center gap-5 my-4">
                Front :{" "}
                <li onClick={isTop} className={top ? "blink" : ""}>

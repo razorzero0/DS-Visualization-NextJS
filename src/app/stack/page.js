@@ -58,10 +58,10 @@ export default function DsStack() {
       <div className="m-10">
          <form onSubmit={handler}>
             <input className="h-10 pl-2 rounded-md text-md" type="text" name="name" />
-            <button className="btn" type="submit">
+            <button className="btn-blue" type="submit">
                PUSH
             </button>
-            <button className="btn" onClick={pop}>
+            <button className="btn-pink" onClick={pop}>
                POP
             </button>
          </form>

@@ -116,26 +116,26 @@ export default function DsList() {
       <div className="m-10">
          <form onSubmit={handler} className="">
             <input
-               className="h-10 pl-2 rounded-md text-md float-left"
+               className="float-left h-10 pl-2 rounded-md text-md"
                type="text"
                name="data"
                ref={inputRef}
             />
-            <button className="btn ml-5" onClick={() => pushBack(inputRef.current.value)}>
+            <button className="ml-5 btn-blue" onClick={() => pushBack(inputRef.current.value)}>
                Append
             </button>
             <div className="mt-2 ">
-               {/* <button className="btn ml-0 bg-Cgrape" onClick={popFront}>
+               {/* <button className="ml-0 btn bg-Cgrape" onClick={popFront}>
                   Prepend
                </button> */}
-               <button className="btn ml-0" onClick={() => pushFront(inputRef.current.value)}>
+               <button className="ml-0 btn-blue" onClick={() => pushFront(inputRef.current.value)}>
                   Prepend
                </button>
-               <button className="btn bg-Cgrape" onClick={popBack}>
+               <button className="btn-grape" onClick={popBack}>
                   Pop
                </button>
 
-               <button className="btn bg-Cpink" onClick={erase}>
+               <button className="btn-red" onClick={erase}>
                   Erase
                </button>
             </div>
@@ -168,7 +168,7 @@ export default function DsList() {
                            <img
                               src="/2arrow.png"
                               alt="img"
-                              className="w-12  h-8 transform translate-y-2"
+                              className="w-12 h-8 transform translate-y-2"
                            />
                         )}
                         <div key={i} className="">
@@ -176,11 +176,11 @@ export default function DsList() {
                               className="flex"
                               initial={{ opacity: 0, y: -100 }}
                               animate={{ opacity: 1, y: 0, dur: 1 }}>
-                              <h1 className="text-Cblack bg-yellow-300 align-center items-center p-2 border border-black ">
+                              <h1 className="items-center p-2 bg-yellow-300 border border-black text-Cblack align-center ">
                                  {i === 0 ? "null" : "prev"}
                               </h1>
                               <li className={i === 0 && top ? "blink" : ""}>{v}</li>
-                              <h1 className="text-Cblack bg-yellow-300 align-center items-center p-2 border border-black ">
+                              <h1 className="items-center p-2 bg-yellow-300 border border-black text-Cblack align-center ">
                                  {i !== list.size() - 1 ? "next" : "null"}
                               </h1>
                            </motion.div>

@@ -3,7 +3,7 @@ import "../globals.css";
 import "./styles.css";
 import { motion } from "framer-motion";
 // @ts-ignore
-import { Deque } from "js_dsal";
+import { Deque } from "../js";
 import { useState } from "react";
 
 export default function Dsqueue() {
@@ -64,10 +64,10 @@ export default function Dsqueue() {
                name="name"
                required
             />
-            <button className="btn" type="submit">
+            <button className="btn-blue" type="submit">
                ENQUEUE
             </button>
-            <button className="btn" onClick={pop}>
+            <button className="btn-red" onClick={pop}>
                DEQUEUE
             </button>
          </form>

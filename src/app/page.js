@@ -47,34 +47,58 @@ export default function Home() {
    const [hoverStates, setHoverStates] = useState(algorithm.map(() => false));
 
    return (
-      <div className="flex flex-col items-center justify-center gap-8 flex-wrap my-10 mx-48  align-middle md:flex-row ">
+      <div className="flex flex-col flex-wrap items-center justify-center gap-8 mx-48 my-10 align-middle md:flex-row ">
          {algorithm.map((v, i) => {
             return (
-               <Link key={i} href={v.url} className="link-menu">
-                  <div className="text-center ">
-                     <motion.div
-                        // initial={{ opacity: 0, y: -100 }}
-                        // animate={{ opacity: 1, y: 0 }}
-                        className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
-                        <motion.img
-                           onMouseOver={() => {
-                              const newHoverStates = [...hoverStates];
-                              newHoverStates[i] = true;
-                              setHoverStates(newHoverStates);
-                           }}
-                           onMouseLeave={() => {
-                              const newHoverStates = [...hoverStates];
-                              newHoverStates[i] = false;
-                              setHoverStates(newHoverStates);
-                           }}
-                           className="w-full h-full "
-                           src={hoverStates[i] ? v.gif : v.img}
-                           alt="img"
-                        />
-                     </motion.div>
-                     <h1 className="mt-4 font-mono text-2xl">{v.name}</h1>
-                  </div>
-               </Link>
+               <div key={i}>
+                  {v.url !== "/bst" ? (
+                     <Link href={v.url} className="link-menu">
+                        <div className="text-center ">
+                           <motion.div className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
+                              <motion.img
+                                 onMouseOver={() => {
+                                    const newHoverStates = [...hoverStates];
+                                    newHoverStates[i] = true;
+                                    setHoverStates(newHoverStates);
+                                 }}
+                                 onMouseLeave={() => {
+                                    const newHoverStates = [...hoverStates];
+                                    newHoverStates[i] = false;
+                                    setHoverStates(newHoverStates);
+                                 }}
+                                 className="w-full h-full "
+                                 src={hoverStates[i] ? v.gif : v.img}
+                                 alt="img"
+                              />
+                           </motion.div>
+                           <h1 className="mt-4 font-mono text-2xl">{v.name}</h1>
+                        </div>
+                     </Link>
+                  ) : (
+                     <a href={v.url} className="link-menu">
+                        <div className="text-center ">
+                           <motion.div className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
+                              <motion.img
+                                 onMouseOver={() => {
+                                    const newHoverStates = [...hoverStates];
+                                    newHoverStates[i] = true;
+                                    setHoverStates(newHoverStates);
+                                 }}
+                                 onMouseLeave={() => {
+                                    const newHoverStates = [...hoverStates];
+                                    newHoverStates[i] = false;
+                                    setHoverStates(newHoverStates);
+                                 }}
+                                 className="w-full h-full "
+                                 src={hoverStates[i] ? v.gif : v.img}
+                                 alt="img"
+                              />
+                           </motion.div>
+                           <h1 className="mt-4 font-mono text-2xl">{v.name}</h1>
+                        </div>{" "}
+                     </a>
+                  )}
+               </div>
             );
          })}
       </div>

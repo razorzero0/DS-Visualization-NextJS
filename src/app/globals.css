@@ -31,7 +31,17 @@ input {
    box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
    @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-Cpink text-Cblack;
 }
+.btn-grape {
+   box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
+   @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-Cgrape text-Cblack;
+}
+.btn-pink {
+   box-shadow: 0.25rem 0.25rem 0 0.05rem #222222;
+   @apply w-16 h-8 ml-4 text-xs duration-200 border rounded-md border-Cblack md:w-28 md:text-lg md:h-10 bg-Cpink text-Cblack;
+}
 .btn-blue:hover,
+.btn-pink:hover,
+.btn-grape:hover,
 .btn-red:hover {
    transform: translate(0.25rem, 0.25rem);
    @apply shadow-none;

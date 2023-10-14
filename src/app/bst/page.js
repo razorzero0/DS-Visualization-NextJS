@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-indent */
 "use client";
-import React from "react";
-import "treeflex/dist/css/treeflex.css";
-import "./styles.css";
+import React, { useEffect } from "react";
+import "./treeflex.css";
+import "./style.css";
+// import "./globals.css";
+
 import { BinarySearchTree } from "./algorithm";
 
 const bst = new BinarySearchTree();
@@ -89,10 +91,10 @@ function App() {
       <div className="m-10">
          <form onSubmit={addNumber}>
             <input type="number" min="1" name="add" onChange={changeNumber} required />
-            <button type="submit" className="btn bg-slate-500">
+            <button type="submit" className="btn-blue">
                Add
             </button>
-            <button type="button" onClick={findMax} className="btn bg-slate-500">
+            <button type="button" onClick={findMax} className="btn-grape">
                Find Max
             </button>
          </form>
@@ -105,10 +107,10 @@ function App() {
                required
                className="h-10 pl-2 text-black rounded-md text-md"
             />
-            <button type="submit" className="btn bg-slate-500">
+            <button type="submit" className="btn-red">
                Remove
             </button>
-            <button type="button" onClick={findMin} className="btn bg-slate-500">
+            <button type="button" onClick={findMin} className="btn-grape">
                Find Min
             </button>
          </form>
