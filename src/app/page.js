@@ -47,14 +47,14 @@ export default function Home() {
    const [hoverStates, setHoverStates] = useState(algorithm.map(() => false));
 
    return (
-      <div className="flex flex-col flex-wrap items-center justify-center gap-8 mx-48 my-10 align-middle md:flex-row ">
+      <div className="flex flex-col items-center justify-center gap-8 mx-48 my-10 align-middle md:flex-wrap md:flex-row ">
          {algorithm.map((v, i) => {
             return (
                <div key={i}>
                   {v.url !== "/bst" ? (
                      <Link href={v.url} className="link-menu">
                         <div className="text-center ">
-                           <motion.div className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
+                           <motion.div className="h-48 overflow-hidden menu bg-Cwhite w-72 ">
                               <motion.img
                                  onMouseOver={() => {
                                     const newHoverStates = [...hoverStates];
@@ -77,7 +77,7 @@ export default function Home() {
                   ) : (
                      <a href={v.url} className="link-menu">
                         <div className="text-center ">
-                           <motion.div className="overflow-hidden menu bg-Cwhite md:h-48 md:w-72 ">
+                           <motion.div className="h-48 overflow-hidden menu bg-Cwhite w-72 ">
                               <motion.img
                                  onMouseOver={() => {
                                     const newHoverStates = [...hoverStates];
