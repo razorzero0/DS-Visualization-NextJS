@@ -142,9 +142,9 @@ export default function DsList() {
          </form>
 
          <div>
-            <h1 className={"font-serif text-sm mt-4 "}>
+            {/* <h1 className={"font-serif text-sm mt-4 "}>
                action ={">"} {action && action}
-            </h1>
+            </h1> */}
             <h1 className="flex items-center justify-center gap-5 my-4">
                Front :{" "}
                <li onClick={isTop} className={top ? "blink" : ""}>
