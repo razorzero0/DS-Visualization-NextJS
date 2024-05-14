@@ -48,15 +48,17 @@ export default function Home() {
 
     return (
         <>
-            <h1 className="text-center mt-8 font-bold text-2xl">DATA STRUCTURE VISUALIZATION</h1>
-            <div className="flex flex-col items-center justify-center gap-8 mx-48 my-10 align-middle md:flex-wrap md:flex-row ">
+            <h1 className="mt-6 text-2xl font-bold text-center">
+                VISUALISASI ALGORITMA STRUKTUR DATA
+            </h1>
+            <div className="flex flex-col items-center justify-center gap-8 mx-48 my-5 align-middle md:flex-wrap md:flex-row ">
                 {algorithm.map((v, i) => {
                     return (
                         <div key={i}>
                             {v.url !== "/bst" ? (
                                 <Link href={v.url} className="link-menu">
                                     <div className="text-center ">
-                                        <motion.div className="h-48 overflow-hidden menu bg-Cwhite w-72 ">
+                                        <motion.div className="overflow-hidden h-44 menu bg-Cwhite w-72 ">
                                             <motion.img
                                                 onMouseOver={() => {
                                                     const newHoverStates = [...hoverStates];
@@ -73,13 +75,13 @@ export default function Home() {
                                                 alt="img"
                                             />
                                         </motion.div>
-                                        <h1 className="mt-4 font-mono text-2xl">{v.name}</h1>
+                                        <h1 className="mt-3 font-mono text-2xl">{v.name}</h1>
                                     </div>
                                 </Link>
                             ) : (
                                 <a href={v.url} className="link-menu">
                                     <div className="text-center ">
-                                        <motion.div className="h-48 overflow-hidden menu bg-Cwhite w-72 ">
+                                        <motion.div className="overflow-hidden h-44 menu bg-Cwhite w-72 ">
                                             <motion.img
                                                 onMouseOver={() => {
                                                     const newHoverStates = [...hoverStates];
@@ -96,13 +98,16 @@ export default function Home() {
                                                 alt="img"
                                             />
                                         </motion.div>
-                                        <h1 className="mt-4 font-mono text-2xl">{v.name}</h1>
+                                        <h1 className="mt-3 font-mono text-2xl">{v.name}</h1>
                                     </div>{" "}
                                 </a>
                             )}
                         </div>
                     );
                 })}
+            </div>
+            <div className="text-center ">
+                <h1>Created with 🧡 by Ainun</h1>
             </div>
         </>
     );
